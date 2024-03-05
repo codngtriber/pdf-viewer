@@ -4,11 +4,13 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+
 import {
   NgxExtendedPdfViewerService,
   pdfDefaultOptions,
   PdfBreakpoints,
 } from 'ngx-extended-pdf-viewer';
+import { debounceTime, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-example-pdf-viewer',
@@ -18,6 +20,10 @@ import {
 })
 export class ExamplePdfViewerComponent implements OnInit {
   @Input() src: any;
+  @Input() zoom: any = '90%';
+
+  windowHeight = window.innerHeight;
+  windowWidth = window.innerWidth;
   /** In most cases, you don't need the NgxExtendedPdfViewerService. It allows you
    *  to use the "find" api, to extract text and images from a PDF file,
    *  to print programmatically, and to show or hide layers by a method call.
@@ -30,13 +36,26 @@ export class ExamplePdfViewerComponent implements OnInit {
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
     PdfBreakpoints.xs = 490; // unit: pixels
     PdfBreakpoints.sm = 768;
-    PdfBreakpoints.md = 992;
-    PdfBreakpoints.lg = 1200;
-    // PdfBreakpoints.xl = 740;
+    PdfBreakpoints.md = 892;
+    PdfBreakpoints.lg = 1920;
+    // PdfBreakpoints.xl = 1920;
     // PdfBreakpoints.xxl = 1920;
     // but most devices support much higher resolutions.
     // Increasing this setting allows your users to use higher zoom factors,
     // trading image quality for performance.
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const windowResize = fromEvent(window, 'resize');
+    console.log(this.windowWidth);
+
+    windowResize.pipe(debounceTime(1000)).subscribe(() => {
+      this.windowHeight = window.innerHeight;
+      this.windowWidth = window.innerWidth;
+      console.log(this.windowWidth);
+      if (this.windowWidth <= 900) {
+        this.zoom = "'60%'";
+      }
+      console.log(this.zoom);
+    });
+  }
 }
