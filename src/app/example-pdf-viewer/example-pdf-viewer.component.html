@@ -1,8 +1,10 @@
 <ngx-extended-pdf-viewer
-  [height]="'100vh'"
   [src]="src"
   pageViewMode="book"
   [showBorders]="true"
-  zoom="80%"
+  [zoom]="'auto'"
+  [height]="'150%'"
+  [mobileFriendlyZoom]="'150%'"
+  [showSecondaryToolbarButton]="false"
 >
 </ngx-extended-pdf-viewer>

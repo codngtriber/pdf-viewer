@@ -7,6 +7,7 @@ import {
 import {
   NgxExtendedPdfViewerService,
   pdfDefaultOptions,
+  PdfBreakpoints,
 } from 'ngx-extended-pdf-viewer';
 
 @Component({
@@ -27,6 +28,12 @@ export class ExamplePdfViewerComponent implements OnInit {
        To illustrate how they're used, here are two example settings: */
     pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
+    PdfBreakpoints.xs = 490; // unit: pixels
+    PdfBreakpoints.sm = 768;
+    PdfBreakpoints.md = 992;
+    PdfBreakpoints.lg = 1200;
+    // PdfBreakpoints.xl = 740;
+    // PdfBreakpoints.xxl = 1920;
     // but most devices support much higher resolutions.
     // Increasing this setting allows your users to use higher zoom factors,
     // trading image quality for performance.
