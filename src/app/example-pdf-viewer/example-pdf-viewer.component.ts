@@ -20,7 +20,7 @@ import { debounceTime, fromEvent } from 'rxjs';
 })
 export class ExamplePdfViewerComponent implements OnInit {
   @Input() src: any;
-  @Input() zoom: any = '90%';
+  @Input() zoom: any = '70%';
 
   windowHeight = window.innerHeight;
   windowWidth = window.innerWidth;
@@ -52,8 +52,8 @@ export class ExamplePdfViewerComponent implements OnInit {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
       console.log(this.windowWidth);
-      if (this.windowWidth <= 1440) {
-        this.zoom = '60%';
+      if (this.windowWidth > 1440) {
+        this.zoom = '90%';
       }
       console.log(this.zoom);
     });
