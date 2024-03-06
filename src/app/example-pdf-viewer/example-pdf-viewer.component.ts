@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Input,
   OnInit,
+  ViewEncapsulation,
 } from '@angular/core';
 
 import {
@@ -17,6 +18,7 @@ import { debounceTime, fromEvent } from 'rxjs';
   templateUrl: './example-pdf-viewer.component.html',
   styleUrls: ['./example-pdf-viewer.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ExamplePdfViewerComponent implements OnInit {
   @Input() src: any;
