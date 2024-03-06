@@ -52,8 +52,8 @@ export class ExamplePdfViewerComponent implements OnInit {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
       console.log(this.windowWidth);
-      if (this.windowWidth <= 900) {
-        this.zoom = "'50%'";
+      if (this.windowWidth <= 1440) {
+        this.zoom = "'80%'";
       }
       console.log(this.zoom);
     });
