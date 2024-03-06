@@ -1,12 +1,15 @@
-<ngx-extended-pdf-viewer
-  [src]="src"
-  pageViewMode="book"
-  [showBorders]="true"
-  [zoom]="zoom"
-  [height]="'150%'"
-  [mobileFriendlyZoom]="'150%'"
-  [showSecondaryToolbarButton]="false"
-  [showTextEditor]="false"
-  [showDrawEditor]="false"
->
-</ngx-extended-pdf-viewer>
+<div style="margin: auto; width: 100%">
+  <ngx-extended-pdf-viewer
+    [src]="src"
+    pageViewMode="book"
+    [showBorders]="true"
+    [zoom]="zoom"
+    [spread]="'even'"
+    [height]="'150%'"
+    [mobileFriendlyZoom]="'150%'"
+    [showSecondaryToolbarButton]="false"
+    [showTextEditor]="false"
+    [showDrawEditor]="false"
+  >
+  </ngx-extended-pdf-viewer>
+</div>

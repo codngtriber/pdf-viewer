@@ -36,7 +36,7 @@ export class ExamplePdfViewerComponent implements OnInit {
     pdfDefaultOptions.maxCanvasPixels = 4096 * 4096 * 5; // The default value is 4096 * 4096 pixels,
     PdfBreakpoints.xs = 490; // unit: pixels
     PdfBreakpoints.sm = 768;
-    PdfBreakpoints.md = 892;
+    PdfBreakpoints.md = 900;
     PdfBreakpoints.lg = 1920;
     // PdfBreakpoints.xl = 1920;
     // PdfBreakpoints.xxl = 1920;
