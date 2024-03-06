@@ -33,12 +33,12 @@ export class ExamplePdfViewerComponent implements OnInit {
        They are a collecton of less frequently used options.
        To illustrate how they're used, here are two example settings: */
     pdfDefaultOptions.doubleTapZoomFactor = '150%'; // The default value is '200%'
-    pdfDefaultOptions.maxCanvasPixels = 6096 * 6096 * 5; // The default value is 4096 * 4096 pixels,
+    pdfDefaultOptions.maxCanvasPixels = 1096 * 1096 * 5; // The default value is 4096 * 4096 pixels,
 
-    PdfBreakpoints.xs = 490; // unit: pixels
-    PdfBreakpoints.sm = 768;
-    PdfBreakpoints.md = 900;
-    PdfBreakpoints.lg = 1920;
+    // PdfBreakpoints.xs = 490; // unit: pixels
+    // PdfBreakpoints.sm = 768;
+    // PdfBreakpoints.md = 900;
+    // PdfBreakpoints.lg = 1920;
     // PdfBreakpoints.xl = 1920;
     // PdfBreakpoints.xxl = 1920;
     // but most devices support much higher resolutions.
