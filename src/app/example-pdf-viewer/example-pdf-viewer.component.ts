@@ -49,16 +49,16 @@ export class ExamplePdfViewerComponent implements OnInit {
   }
   ngOnInit(): void {
     const windowResize = fromEvent(window, 'resize');
-    console.log(this.windowWidth);
+    // console.log(this.windowWidth);
 
     windowResize.pipe(debounceTime(1000)).subscribe(() => {
       this.windowHeight = window.innerHeight;
       this.windowWidth = window.innerWidth;
-      console.log(this.windowWidth);
+      //   console.log(this.windowWidth);
       if (this.windowWidth > 1440) {
         this.zoom = '90%';
       }
-      console.log(this.zoom);
+      //   console.log(this.zoom);
     });
   }
 }
